@@ -67,7 +67,7 @@ UKF::UKF() {
   is_initialized_ = false;
 
   ///* predicted sigma points matrix
-  Xsig_pred_ = MatrixXd(n_x_, 2*n_x_+1);
+  Xsig_pred_ = MatrixXd(n_x_, 2*n_aug_+1);
   
   ///* Weights of sigma points
   weights_ = VectorXd(2*n_aug_+1);
