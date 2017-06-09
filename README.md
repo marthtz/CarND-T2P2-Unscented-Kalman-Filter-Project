@@ -1,3 +1,23 @@
+## Project Code 
+The project was cloned from the official CarND "Unscented Kalman Filter Project" repository (https://github.com/udacity/CarND-Unscented-Kalman-Filter-Project).
+
+I've done the following modifications:
+ - tools.cpp:
+   - added RMSE calculation (from term 2, lesson 5)
+ - ukf.cpp:
+   - added Kalman Filter update code for LIDAR and RADAR (UKF) and added new function combining code used by LIDAR and RADAR
+   - tuned process noise for longitudinal and yaw acceleration using NIS
+   
+I added NIS calculation for test purpose and to tune process noise parameters for longitudinal and yaw acceleration. I ended up with values:
+ - 1.5 m/s^2 for longitudinal (corresponds to 5.4 km/h speed variation per sec)
+ - PI/4 rad/s^2 (8 sec per circle)
+ 
+NIS result with these parameters is:
+ - 3.2% above limit for Radar (8 out of 249 measurements - limit 7.815 - 3D)
+ - 2.4% above limit for Lidar (6 out of 249 measurements - limit 5.991 - 2D)
+
+
+
 # Unscented Kalman Filter Project Starter Code
 Self-Driving Car Engineer Nanodegree Program
 
