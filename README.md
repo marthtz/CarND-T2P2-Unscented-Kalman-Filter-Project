@@ -16,6 +16,12 @@ NIS result with these parameters is:
  - 3.2% above limit for Radar (8 out of 249 measurements - limit 7.815 - 3D)
  - 2.4% above limit for Lidar (6 out of 249 measurements - limit 5.991 - 2D)
 
+![NISGraph](NISGraph.png)
+
+With these setting the simulator result for RMSE is the following:
+![SIMRMSE](Sim.png)
+
+
 
 
 # Unscented Kalman Filter Project Starter Code
