@@ -36,9 +36,11 @@ public:
 
   ///* Process noise standard deviation longitudinal acceleration in m/s^2
   double std_a_;
+  double std_a_square_;
 
   ///* Process noise standard deviation yaw acceleration in rad/s^2
   double std_yawdd_;
+  double std_yawdd_square_;
 
   ///* Laser measurement noise standard deviation position1 in m
   double std_laspx_;
@@ -53,7 +55,7 @@ public:
   double std_radphi_;
 
   ///* Radar measurement noise standard deviation radius change in m/s
-  double std_radrd_ ;
+  double std_radrd_;
 
   ///* Weights of sigma points
   VectorXd weights_;
@@ -63,6 +65,9 @@ public:
 
   ///* Augmented state dimension
   int n_aug_;
+
+  // Number of sigma points
+  int n_sigma_points_;
 
   ///* Sigma point spreading parameter
   double lambda_;
@@ -75,6 +80,9 @@ public:
   MatrixXd R_radar_;
   MatrixXd R_lidar_;
 
+  float NIS_Radar_[1000];
+  float NIS_Lidar_[1000];
+  unsigned int TimeStep_Count_;
 
   /**
    * Constructor
